@@ -1,6 +1,10 @@
+import HomepageHero from "../components/HomepageHero";
+
 export default function HomePage() {
   return (
-    <div>This is the home page!!!</div>
+    <div className="text-center">
+      <HomepageHero />
+    </div>
   )
 }
 
