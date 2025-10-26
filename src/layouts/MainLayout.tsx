@@ -11,7 +11,7 @@ export default function MainLayout() {
       >
       </div>
 
-      <nav className="flex justify-between px-25 items-center h-15 absolute w-full z-10">
+      <nav className="flex justify-between px-25 items-center h-15 absolute w-full z-11">
         <h3>LOGO</h3>
         <div className="flex gap-10">
           <Link to="/portfolio">portfolio</Link>
