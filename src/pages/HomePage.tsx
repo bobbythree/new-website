@@ -1,19 +1,26 @@
 import HomepageHero from "../components/HomepageHero";
 import ServicesCard from "../components/ServicesCard";
-
-const fullstackItems: string[] = [
-  "React", "Typescript", "Node.js", "Express.js", "Firebase"
-]
+import { fullstack } from "../data/services";
 
 export default function HomePage() {
   return (
 
-    <div className="flex items-center justify-center h-screen bg-zinc-900">
+    <div className="flex flex-col items-center justify-center h-screen bg-zinc-900">
       <HomepageHero />
-      <ServicesCard
-        title="Fullstack Web Apps"
-        items={fullstackItems}
-      />
+      <div className="flex gap-10 mt-25">
+        <ServicesCard
+          title={fullstack.title}
+          items={fullstack.items}
+        />
+        <ServicesCard
+          title={fullstack.title}
+          items={fullstack.items}
+        />
+        <ServicesCard
+          title={fullstack.title}
+          items={fullstack.items}
+        />
+      </div>
     </div>
   )
 }
