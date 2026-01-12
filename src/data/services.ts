@@ -6,4 +6,5 @@ export const fullstack = {
     "Node.js",
     "Firebase"
   ]
-} 
+}
+
