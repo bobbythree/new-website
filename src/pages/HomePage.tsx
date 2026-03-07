@@ -1,6 +1,6 @@
 import HomepageHero from "../components/HomepageHero";
 import ServicesCard from "../components/ServicesCard";
-import { fullstack } from "../data/services";
+import { fullstack, websites, linux } from "../data/services";
 
 export default function HomePage() {
   return (
@@ -13,12 +13,12 @@ export default function HomePage() {
           items={fullstack.items}
         />
         <ServicesCard
-          title={fullstack.title}
-          items={fullstack.items}
+          title={websites.title}
+          items={websites.items}
         />
         <ServicesCard
-          title={fullstack.title}
-          items={fullstack.items}
+          title={linux.title}
+          items={linux.items}
         />
       </div>
     </div>
