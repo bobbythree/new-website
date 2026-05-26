@@ -1,6 +1,6 @@
 import HomepageHero from "../components/HomepageHero";
 import ServicesCard from "../components/ServicesCard";
-import { fullstack, websites, linux } from "../data/services";
+import { webApps, businessSystems, modernization, consulting } from "../data/services";
 
 export default function HomePage() {
   return (
@@ -9,16 +9,20 @@ export default function HomePage() {
       <HomepageHero />
       <div className="flex gap-10 mt-25">
         <ServicesCard
-          title={fullstack.title}
-          items={fullstack.items}
+          title={webApps.title}
+          items={webApps.items}
         />
         <ServicesCard
-          title={websites.title}
-          items={websites.items}
+          title={businessSystems.title}
+          items={businessSystems.items}
         />
         <ServicesCard
-          title={linux.title}
-          items={linux.items}
+          title={modernization.title}
+          items={modernization.items}
+        />
+        <ServicesCard
+          title={consulting.title}
+          items={consulting.items}
         />
       </div>
     </div>
