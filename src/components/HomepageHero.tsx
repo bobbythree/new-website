@@ -3,7 +3,7 @@ export default function HomepageHero() {
     <div className="text-center w-3xl flex flex-col items-center justify-center">
       <h1 className="text-7xl text-sky-300">Robert Lewis III</h1>
       <h3 className="text-4xl mt-1 text-sky-400">Custom Software Solutions</h3>
-      <p className="text-lg mt-3 max-w-2xl text-sky-500 leading-relaxed">
+      <p className="text-lg mt-10 max-w-xl text-sky-500 leading-relaxed">
         I build modern web applications, internal business systems, and customer
         platforms from the ground up — or improve and expand the tools your
         business already relies on.
