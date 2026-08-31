@@ -6,7 +6,7 @@ interface ServicesCardProps {
 export default function ServicesCard({ title, items }: ServicesCardProps) {
   return (
     <div className="flex w-full flex-col rounded-2xl border border-stone-200 bg-white p-6">
-      <h3 className="pb-3 font-cabin text-2xl font-semibold text-slate-800">
+      <h3 className="pb-3 text-2xl font-semibold text-slate-800">
         {title}
       </h3>
 

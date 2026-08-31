@@ -8,7 +8,7 @@ export default function HomePage() {
       <HomepageHero />
 
       <div className="mt-25 w-[80vw] max-w-375">
-        <h2 className="font-cabin text-4xl font-semibold text-slate-800 md:text-5xl">
+        <h2 className="text-4xl font-semibold text-slate-800 md:text-5xl">
           Services
         </h2>
 
