@@ -5,7 +5,7 @@ import { webApps, businessSystems, modernization, consulting } from "../data/ser
 export default function HomePage() {
   return (
 
-    <div className="flex flex-col items-center justify-center h-screen bg-linear-180 from-zinc-950 to-cyan-950">
+    <div className="flex flex-col items-center justify-center bg-amber-50">
       <HomepageHero />
       <div className="flex gap-5 mt-25">
         <ServicesCard
