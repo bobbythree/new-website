@@ -35,11 +35,10 @@ export const modernization = {
 export const consulting = {
   title: "Technical Consulting",
   items: [
-    "Turn business requirements into a practical technical plan",
+    "Translate business requirements into practical technical architecture",
     "Determine when custom software is the right solution",
-    "Application architecture and technology decisions",
+    "Explore practical AI integration opportunities",
     "Infrastructure, hosting, and deployment planning",
-    "Technical troubleshooting and problem solving",
     "Ongoing technical partnership and support"
   ]
 }
