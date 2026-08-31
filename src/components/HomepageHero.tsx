@@ -1,6 +1,6 @@
 export default function HomepageHero() {
   return (
-    <section className="mx-auto flex min-h-screen max-w-6xl flex-col justify-center px-6 text-slate-800">
+    <section className="mx-auto flex min-h-screen w-full max-w-6xl flex-col justify-center px-6 text-slate-800">
       <p className="font-cabin text-sm font-semibold uppercase tracking-widest">
         Robert Lewis III — Software Consultant & Engineer
       </p>
