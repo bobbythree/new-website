@@ -1,44 +1,44 @@
 export const webApps = {
-  title: "Custom Web Applications",
+  title: "Custom Business Applications",
   items: [
-    "Full-stack web applications built around real business workflows",
-    "Customer portals, admin dashboards, and media management systems",
-    "Authentication, databases, cloud storage, and third-party API integrations",
-    "Training and presentation platforms with media delivery and content organization",
-    "Built with React, TypeScript, Go, Node.js, Firebase, and modern web tooling",
-    "Designed for reliability, scalability, and maintainable long-term development"
+    "Custom software built around the specific needs of your business",
+    "Customer and client portals",
+    "Internal business applications",
+    "Admin and management systems",
+    "Content, document, and media platforms",
+    "Custom workflows, reporting, permissions, and automation"
   ]
 }
 
 export const businessSystems = {
-  title: "Internal Business Tools",
+  title: "Workflow & Process Automation",
   items: [
-    "Custom systems for managing content, files, users, and business data",
-    "Tools that replace repetitive manual workflows and disconnected spreadsheets",
-    "Role-based admin systems with permissions and account management",
-    "File uploads, media libraries, reporting, and workflow automation",
-    "Software tailored to the way your business already operates"
+    "Replace spreadsheet-driven and manual workflows",
+    "Connect processes that currently live across multiple tools",
+    "Automate repetitive administrative tasks",
+    "Centralize business data, files, content, and customer information",
+    "Build tools around the way your business already operates"
   ]
 }
 
 export const modernization = {
-  title: "Platform Modernization",
+  title: "Existing Software Development",
   items: [
-    "Upgrading outdated software and legacy workflows",
-    "Modern React and TypeScript frontend architecture",
-    "Backend refactors for better stability and maintainability",
-    "Deployment, infrastructure, and performance improvements",
-    "Expanding existing systems with new features and integrations"
+    "Add new features and capabilities to existing applications",
+    "Modernize aging systems and interfaces",
+    "Integrate third-party services and APIs",
+    "Improve reliability, performance, and infrastructure",
+    "Take over and continue development of existing software"
   ]
 }
 
 export const consulting = {
   title: "Technical Consulting",
   items: [
-    "Architecture planning for custom software projects",
-    "Infrastructure, hosting, deployment, and scaling guidance",
-    "Debugging difficult production issues and system instability",
-    "Advice on modern web stacks, backend architecture, and workflows",
-    "Technical partnership for businesses building long-term software systems"
+    "Translate business requirements into practical technical architecture",
+    "Determine when custom software is the right solution",
+    "Explore practical AI integration opportunities",
+    "Infrastructure, hosting, and deployment planning",
+    "Ongoing technical partnership and support"
   ]
 }
