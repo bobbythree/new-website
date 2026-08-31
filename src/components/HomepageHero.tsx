@@ -20,7 +20,7 @@ export default function HomepageHero() {
       <div className="mt-8">
         <a
           href="#contact"
-          className="inline-flex items-center rounded-lg bg-sky-600 px-5 py-3 text-base font-semibold text-white transition hover:bg-sky-700"
+          className="inline-flex items-center rounded-lg bg-sky-700 px-5 py-3 text-base font-semibold text-white transition hover:bg-sky-800"
         >
           Book a consultation
         </a>
