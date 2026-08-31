@@ -11,18 +11,27 @@ export default function FeaturedWork() {
         </h3>
 
         <p className="mt-4 text-lg leading-relaxed text-slate-700">
-          A company that makes compliance training materials came to me looking
-          for a better way to preview and present SCORM packages to prospective
-          customers. Their content was spread across separate tools for video,
-          SCORM, storage, and sharing, which made the sales and demo process
-          harder than it needed to be.
+          A company that produces and sells compliance content was relying on several
+          separate tools to showcase its catalog of video and SCORM microlearning
+          materials to prospective customers. The experience was fragmented,
+          difficult to search and organize, and limited the company's ability to
+          create a polished, cohesive sales experience around its content.
         </p>
 
         <p className="mt-4 text-lg leading-relaxed text-slate-700">
-          I designed and built a single custom platform that brought those needs
-          together in one place, with an administrative system for managing the
-          company's training library and a customer-facing portal for presenting
-          that content to prospects and clients.
+          I initially came in to solve a specific technical problem: making SCORM
+          microlearning modules accessible directly through a modern web application.
+          That work expanded into the design and development of a custom platform that
+          brought the company's video, SCORM, and supporting materials into one place.
+        </p>
+
+        <p className="mt-4 text-lg leading-relaxed text-slate-700">
+          The platform now gives the company a central system for managing its content
+          catalog, assembling curated presentations for prospects, controlling
+          customer access, delivering purchased materials, and tracking engagement. I
+          continue to maintain and expand the platform while consulting on new
+          capabilities, workflow improvements, and the technical direction of the
+          product.
         </p>
 
         <h4 className="mt-8 text-lg font-semibold">
@@ -31,20 +40,28 @@ export default function FeaturedWork() {
 
         <ul className="mt-3 list-disc space-y-2 pl-5 text-slate-700 marker:text-slate-500">
           <li>
-            An admin dashboard for uploading, organizing, and managing training
-            content
+            A web-based SCORM player that runs existing microlearning packages
+            directly within the customer-facing platform
           </li>
           <li>
-            A customer portal for securely previewing and accessing assigned
-            materials
+            An admin dashboard for uploading, organizing, searching, and managing a
+            large catalog of compliance content
           </li>
           <li>
-            Presentation tools for grouping videos, SCORM courses, and related
-            content into polished demos
+            Presentation tools for assembling selected videos, SCORM modules, and
+            related materials into polished customer demos
+          </li>
+          <li>
+            A secure customer portal for accessing assigned presentations and
+            purchased materials
           </li>
           <li>
             User access controls, expiration settings, downloads, and account
             management
+          </li>
+          <li>
+            Support for client-specific and language-specific versions of existing
+            content
           </li>
           <li>
             Analytics for tracking content views and customer engagement
@@ -52,8 +69,9 @@ export default function FeaturedWork() {
         </ul>
 
         <p className="mt-8 text-lg font-medium leading-relaxed">
-          The result is a simpler workflow for the team and a much better way
-          to organize, present, and sell their training content.
+          The result replaced a fragmented sales and demo workflow with a
+          purpose-built platform for managing, showcasing, delivering, and expanding
+          the company's compliance content.
         </p>
       </div>
 
