@@ -11,27 +11,26 @@ export default function FeaturedWork() {
         </h3>
 
         <p className="mt-4 text-lg leading-relaxed text-slate-700">
-          A company that produces and sells compliance content was relying on several
-          separate tools to showcase its catalog of video and SCORM microlearning
-          materials to prospective customers. The experience was fragmented,
-          difficult to search and organize, and limited the company's ability to
-          create a polished, cohesive sales experience around its content.
+          A company that produces and sells compliance content was relying on
+          several separate tools to showcase its catalog of video and SCORM
+          microlearning materials to prospective customers. The experience was
+          fragmented, difficult to search and organize, and poorly suited to the
+          way the company wanted to present and sell its content.
         </p>
 
         <p className="mt-4 text-lg leading-relaxed text-slate-700">
-          I initially came in to solve a specific technical problem: making SCORM
-          microlearning modules accessible directly through a modern web application.
-          That work expanded into the design and development of a custom platform that
-          brought the company's video, SCORM, and supporting materials into one place.
+          I initially came in to solve a specific technical problem: making
+          SCORM microlearning modules accessible directly through a modern web
+          application. That work grew into the design and development of a
+          custom platform that brought the company's content, sales
+          presentations, customer delivery, and administrative workflows into
+          one system.
         </p>
 
         <p className="mt-4 text-lg leading-relaxed text-slate-700">
-          The platform now gives the company a central system for managing its content
-          catalog, assembling curated presentations for prospects, controlling
-          customer access, delivering purchased materials, and tracking engagement. I
-          continue to maintain and expand the platform while consulting on new
-          capabilities, workflow improvements, and the technical direction of the
-          product.
+          I continue to work with the company as a consulting and engineering
+          partner, maintaining the platform, improving existing workflows, and
+          designing new capabilities as its needs evolve.
         </p>
 
         <h4 className="mt-8 text-lg font-semibold">
@@ -40,28 +39,28 @@ export default function FeaturedWork() {
 
         <ul className="mt-3 list-disc space-y-2 pl-5 text-slate-700 marker:text-slate-500">
           <li>
-            A web-based SCORM player that runs existing microlearning packages
-            directly within the customer-facing platform
+            An administrative dashboard for uploading, organizing, editing, and
+            managing a large content catalog
           </li>
           <li>
-            An admin dashboard for uploading, organizing, searching, and managing a
-            large catalog of compliance content
+            A customer-facing portal for showcasing content to prospects and
+            delivering purchased materials to customers
           </li>
           <li>
-            Presentation tools for assembling selected videos, SCORM modules, and
-            related materials into polished customer demos
+            Presentation tools for assembling curated collections of videos,
+            SCORM modules, and supporting materials
           </li>
           <li>
-            A secure customer portal for accessing assigned presentations and
-            purchased materials
+            In-platform viewing and downloading for video, SCORM modules, and
+            supporting materials
           </li>
           <li>
-            User access controls, expiration settings, downloads, and account
-            management
+            Search, filtering, and organization tools for navigating a large
+            and growing content catalog
           </li>
           <li>
-            Support for client-specific and language-specific versions of existing
-            content
+            Support for customized and translated versions of existing content
+            for different customers and audiences
           </li>
           <li>
             Analytics for tracking content views and customer engagement
@@ -69,32 +68,42 @@ export default function FeaturedWork() {
         </ul>
 
         <p className="mt-8 text-lg font-medium leading-relaxed">
-          The result replaced a fragmented sales and demo workflow with a
-          purpose-built platform for managing, showcasing, delivering, and expanding
-          the company's compliance content.
+          The result is a purpose-built platform that replaced a fragmented
+          sales and delivery workflow with one cohesive system, giving the
+          company a more effective way to manage, showcase, sell, and deliver
+          its content as the platform continues to grow.
         </p>
       </div>
 
       <div className="mt-20 max-w-3xl">
         <h3 className="text-2xl font-semibold md:text-3xl">
-          Technical Leadership for a Production Mobile Platform
+          Mobile Application and Platform Improvement
         </h3>
 
         <p className="mt-4 text-lg leading-relaxed text-slate-700">
-          I work directly with the owner of an established production mobile
-          application as the technical lead and consulting partner for the
-          platform. He drives the product vision and business direction; I help
-          translate that vision into architecture, engineering decisions,
-          infrastructure, and working software.
+          An established production mobile platform was dealing with a
+          difficult deployment process, a complex and outdated codebase, and
+          search functionality that often failed to return useful or relevant
+          results for users looking for services and resources. These issues
+          were creating friction for both ongoing development and the user
+          experience.
         </p>
 
         <p className="mt-4 text-lg leading-relaxed text-slate-700">
-          My role spans the overall health and direction of the product,
-          including simplifying deployments, improving CI/CD, cleaning up and
-          restructuring the codebase, modernizing parts of the stack, managing
-          the repository, and designing the architecture for new mobile and web
-          capabilities. I also contribute production code across the
-          application and backend.
+          I work directly with the owner to improve the product's technical
+          systems while continuing to develop and expand it. My work has
+          included cleaning up and restructuring the codebase, improving build
+          and deployment workflows, rebuilding search and discovery, and
+          contributing production code across the mobile application, backend,
+          and supporting web systems.
+        </p>
+
+        <p className="mt-4 text-lg leading-relaxed text-slate-700">
+          I also serve as an ongoing technical consultant, helping evaluate
+          product ideas, improve development practices, make architectural
+          decisions, and plan new capabilities. Current work includes leading
+          the platform's AI integration and designing an agency portal for
+          organizations that manage multiple locations and services.
         </p>
 
         <h4 className="mt-8 text-lg font-semibold">
@@ -103,38 +112,41 @@ export default function FeaturedWork() {
 
         <ul className="mt-3 list-disc space-y-2 pl-5 text-slate-700 marker:text-slate-500">
           <li>
-            Improving application architecture and cleaning up a complex
-            existing codebase
-          </li>
-          <li>
-            Managing the repository, branching strategy, and technical
-            direction of the project
+            Cleaning up and restructuring a complex existing codebase
           </li>
           <li>
             Improving build, release, deployment, and CI/CD workflows
           </li>
           <li>
-            Rebuilding search so users can more reliably find relevant
-            facilities and services
+            Improving search and discovery so users can find relevant services
+            and resources more reliably
           </li>
           <li>
-            Advising on AI integration for handling customer queries and
-            connecting users with appropriate resources
-          </li>
-          <li>
-            Designing the architecture for an agency portal that allows
-            organizations to manage multiple facilities
+            Improving repository structure, branching strategy, and
+            development workflows
           </li>
           <li>
             Contributing production code across the mobile application,
-            backend, and supporting web functionality
+            backend, and supporting web systems
+          </li>
+          <li>
+            Leading AI integration for customer queries and resource matching
+          </li>
+          <li>
+            Designing an agency portal that allows organizations to manage
+            multiple locations, services, and listings from one place
+          </li>
+          <li>
+            Advising on architecture, engineering decisions, and future product
+            development
           </li>
         </ul>
 
         <p className="mt-8 text-lg font-medium leading-relaxed">
-          The work is helping move the product toward a cleaner architecture, a
-          more dependable release process, and a stronger technical foundation
-          for future growth.
+          The result is a more maintainable product, a more dependable
+          development and release process, a better experience for users, and
+          an ongoing consulting partnership focused on improving and expanding
+          the platform.
         </p>
       </div>
     </section>
