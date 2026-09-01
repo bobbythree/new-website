@@ -1,9 +1,74 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+
+declare global {
+  interface Window {
+    turnstile?: {
+      render: (
+        container: HTMLElement,
+        options: {
+          sitekey: string;
+          callback: (token: string) => void;
+          "error-callback": () => void;
+          "expired-callback": () => void;
+        },
+      ) => string;
+      remove: (widgetId: string) => void;
+      reset: (widgetId: string) => void;
+    };
+  }
+}
+
+const TURNSTILE_SITE_KEY = "0x4AAAAAAEjWa0Ld8JOCYQfN";
 
 export default function ContactForm() {
   const [status, setStatus] = useState<
     "idle" | "sending" | "success" | "error"
   >("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const turnstileContainerRef = useRef<HTMLDivElement>(null);
+  const turnstileWidgetIdRef = useRef<string | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    let retryTimer: number | undefined;
+
+    function renderTurnstile() {
+      if (cancelled || !turnstileContainerRef.current) return;
+
+      if (!window.turnstile) {
+        retryTimer = window.setTimeout(renderTurnstile, 100);
+        return;
+      }
+
+      turnstileWidgetIdRef.current = window.turnstile.render(
+        turnstileContainerRef.current,
+        {
+          sitekey: TURNSTILE_SITE_KEY,
+          callback: setTurnstileToken,
+          "error-callback": () => setTurnstileToken(null),
+          "expired-callback": () => setTurnstileToken(null),
+        },
+      );
+    }
+
+    renderTurnstile();
+
+    return () => {
+      cancelled = true;
+      if (retryTimer !== undefined) window.clearTimeout(retryTimer);
+      if (turnstileWidgetIdRef.current && window.turnstile) {
+        window.turnstile.remove(turnstileWidgetIdRef.current);
+      }
+    };
+  }, []);
+
+  function resetTurnstile() {
+    setTurnstileToken(null);
+    if (turnstileWidgetIdRef.current && window.turnstile) {
+      window.turnstile.reset(turnstileWidgetIdRef.current);
+    }
+  }
 
   async function handleSubmit(
     event: React.SubmitEvent<HTMLFormElement>
@@ -13,8 +78,17 @@ export default function ContactForm() {
     const form = event.currentTarget;
     const formData = new FormData(form);
 
+    if (!turnstileToken) {
+      setErrorMessage("Please complete the security check and try again.");
+      setStatus("error");
+      return;
+    }
+
+    formData.set("cf-turnstile-response", turnstileToken);
+
     try {
       setStatus("sending");
+      setErrorMessage("");
 
       const response = await fetch("https://formspree.io/f/mwlklpzk", {
         method: "POST",
@@ -25,12 +99,28 @@ export default function ContactForm() {
       });
 
       if (!response.ok) {
-        throw new Error("Form submission failed");
+        const result = (await response.json().catch(() => null)) as {
+          errors?: Array<{ message?: string }>;
+          error?: string;
+        } | null;
+        const message =
+          result?.errors?.map((error) => error.message).filter(Boolean).join(" ") ||
+          result?.error ||
+          "Form submission failed. Please try again.";
+
+        throw new Error(message);
       }
 
       form.reset();
+      resetTurnstile();
       setStatus("success");
-    } catch {
+    } catch (error) {
+      resetTurnstile();
+      setErrorMessage(
+        error instanceof Error
+          ? error.message
+          : "Form submission failed. Please try again.",
+      );
       setStatus("error");
     }
   }
@@ -153,9 +243,11 @@ export default function ContactForm() {
         />
       </div>
 
+      <div ref={turnstileContainerRef} />
+
       <button
         type="submit"
-        disabled={status === "sending"}
+        disabled={status === "sending" || !turnstileToken}
         className="rounded-md bg-sky-700 px-6 py-3 font-medium text-white transition hover:bg-sky-800 disabled:cursor-not-allowed disabled:opacity-60"
       >
         {status === "sending"
@@ -170,9 +262,7 @@ export default function ContactForm() {
       )}
 
       {status === "error" && (
-        <p className="text-sm text-red-700">
-          Something went wrong while sending your message. Please try again.
-        </p>
+        <p className="text-sm text-red-700">{errorMessage}</p>
       )}
 
       {status === "idle" && (
