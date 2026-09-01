@@ -1,3 +1,5 @@
+import { Link } from "react-router"
+
 export default function HomepageHero() {
   return (
     <section className="mx-auto flex min-h-screen w-full max-w-6xl flex-col justify-center px-6 text-slate-800">
@@ -18,12 +20,12 @@ export default function HomepageHero() {
       </p>
 
       <div className="mt-8">
-        <a
-          href="#contact"
+        <Link
+          to="/contact"
           className="inline-flex items-center rounded-lg bg-sky-700 px-5 py-3 text-base font-semibold text-white transition hover:bg-sky-800"
         >
           Book a consultation
-        </a>
+        </Link>
       </div>
     </section>
   )
