@@ -26,6 +26,7 @@ export default function ContactForm() {
   >("idle");
   const [errorMessage, setErrorMessage] = useState("");
   const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+
   const turnstileContainerRef = useRef<HTMLDivElement>(null);
   const turnstileWidgetIdRef = useRef<string | null>(null);
 
@@ -34,7 +35,9 @@ export default function ContactForm() {
     let retryTimer: number | undefined;
 
     function renderTurnstile() {
-      if (cancelled || !turnstileContainerRef.current) return;
+      if (cancelled || !turnstileContainerRef.current) {
+        return;
+      }
 
       if (!window.turnstile) {
         retryTimer = window.setTimeout(renderTurnstile, 100);
@@ -56,7 +59,11 @@ export default function ContactForm() {
 
     return () => {
       cancelled = true;
-      if (retryTimer !== undefined) window.clearTimeout(retryTimer);
+
+      if (retryTimer !== undefined) {
+        window.clearTimeout(retryTimer);
+      }
+
       if (turnstileWidgetIdRef.current && window.turnstile) {
         window.turnstile.remove(turnstileWidgetIdRef.current);
       }
@@ -65,13 +72,14 @@ export default function ContactForm() {
 
   function resetTurnstile() {
     setTurnstileToken(null);
+
     if (turnstileWidgetIdRef.current && window.turnstile) {
       window.turnstile.reset(turnstileWidgetIdRef.current);
     }
   }
 
   async function handleSubmit(
-    event: React.SubmitEvent<HTMLFormElement>
+    event: React.SubmitEvent<HTMLFormElement>,
   ) {
     event.preventDefault();
 
@@ -103,8 +111,12 @@ export default function ContactForm() {
           errors?: Array<{ message?: string }>;
           error?: string;
         } | null;
+
         const message =
-          result?.errors?.map((error) => error.message).filter(Boolean).join(" ") ||
+          result?.errors
+            ?.map((error) => error.message)
+            .filter(Boolean)
+            .join(" ") ||
           result?.error ||
           "Form submission failed. Please try again.";
 
@@ -116,18 +128,21 @@ export default function ContactForm() {
       setStatus("success");
     } catch (error) {
       resetTurnstile();
+
       setErrorMessage(
         error instanceof Error
           ? error.message
           : "Form submission failed. Please try again.",
       );
+
       setStatus("error");
     }
   }
+
   return (
     <form
       onSubmit={handleSubmit}
-      className="mt-10 max-w-2xl space-y-6"
+      className="mt-5 max-w-xl space-y-3"
     >
       <div>
         <label
@@ -143,7 +158,7 @@ export default function ContactForm() {
           type="text"
           required
           maxLength={100}
-          className="mt-2 w-full rounded-md border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none transition focus:border-sky-700 focus:ring-2 focus:ring-sky-700/20"
+          className="mt-1.5 w-full rounded-md border border-slate-300 bg-white px-4 py-2.5 text-slate-900 outline-none transition focus:border-sky-700 focus:ring-2 focus:ring-sky-700/20"
         />
       </div>
 
@@ -161,7 +176,7 @@ export default function ContactForm() {
           type="email"
           required
           maxLength={254}
-          className="mt-2 w-full rounded-md border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none transition focus:border-sky-700 focus:ring-2 focus:ring-sky-700/20"
+          className="mt-1.5 w-full rounded-md border border-slate-300 bg-white px-4 py-2.5 text-slate-900 outline-none transition focus:border-sky-700 focus:ring-2 focus:ring-sky-700/20"
         />
       </div>
 
@@ -181,7 +196,7 @@ export default function ContactForm() {
           name="company"
           type="text"
           maxLength={150}
-          className="mt-2 w-full rounded-md border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none transition focus:border-sky-700 focus:ring-2 focus:ring-sky-700/20"
+          className="mt-1.5 w-full rounded-md border border-slate-300 bg-white px-4 py-2.5 text-slate-900 outline-none transition focus:border-sky-700 focus:ring-2 focus:ring-sky-700/20"
         />
       </div>
 
@@ -198,26 +213,32 @@ export default function ContactForm() {
           name="projectType"
           defaultValue=""
           required
-          className="mt-2 w-full rounded-md border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none transition focus:border-sky-700 focus:ring-2 focus:ring-sky-700/20"
+          className="mt-1.5 w-full rounded-md border border-slate-300 bg-white px-4 py-2.5 text-slate-900 outline-none transition focus:border-sky-700 focus:ring-2 focus:ring-sky-700/20"
         >
           <option value="" disabled>
             Select an option
           </option>
+
           <option value="Building a custom application">
             Building a custom application
           </option>
+
           <option value="Improving existing software">
             Improving existing software
           </option>
+
           <option value="Workflow or process automation">
             Workflow or process automation
           </option>
+
           <option value="AI integration">
             AI integration
           </option>
+
           <option value="Technical consulting">
             Technical consulting
           </option>
+
           <option value="Something else">
             Something else
           </option>
@@ -235,11 +256,11 @@ export default function ContactForm() {
         <textarea
           id="message"
           name="message"
-          rows={7}
+          rows={4}
           required
           maxLength={5000}
           placeholder="What are you looking to build, improve, or solve?"
-          className="mt-2 w-full resize-y rounded-md border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-sky-700 focus:ring-2 focus:ring-sky-700/20"
+          className="mt-1.5 w-full resize-y rounded-md border border-slate-300 bg-white px-4 py-2.5 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-sky-700 focus:ring-2 focus:ring-sky-700/20"
         />
       </div>
 
@@ -248,7 +269,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === "sending" || !turnstileToken}
-        className="rounded-md bg-sky-700 px-6 py-3 font-medium text-white transition hover:bg-sky-800 disabled:cursor-not-allowed disabled:opacity-60"
+        className="rounded-md bg-sky-700 px-6 py-2.5 font-medium text-white transition hover:bg-sky-800 disabled:cursor-not-allowed disabled:opacity-60"
       >
         {status === "sending"
           ? "Sending..."
@@ -262,7 +283,9 @@ export default function ContactForm() {
       )}
 
       {status === "error" && (
-        <p className="text-sm text-red-700">{errorMessage}</p>
+        <p className="text-sm text-red-700">
+          {errorMessage}
+        </p>
       )}
 
       {status === "idle" && (
